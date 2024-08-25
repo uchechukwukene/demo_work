@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    integrity="sha384-d7e6bQ/KTcNxj2r3uU70SqbJSNz6gF1+rdq9zQ/uFJoD6bTzh5OP+5JF0PBf0iJ3" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yogi</title>
+  <script>
+    function openMobileMenu() {
+      const mobileMenu = document.querySelector('.mobile-menu');
+      mobileMenu.style.display = 'flex';
+    }
+
+    function closeMobileMenu() {
+      const mobileMenu = document.querySelector('.mobile-menu');
+      mobileMenu.style.display = 'none';
+    }
+
+    function copyToClipboard() {
+      const copyText = document.getElementById('copyText');
+      const textArea = document.createElement('textarea');
+      textArea.value = copyText.textContent;
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textArea);
+
+      // Optionally, provide visual feedback (e.g., change icon color)
+      const copyIcon = document.querySelector('.fa-copy');
+      copyIcon.style.color = '#4CAF50'; // Change to desired color
+      setTimeout(() => {
+        copyIcon.style.color = ''; // Reset the color after a brief delay
+      }, 1000);
+    }
+
+  </script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <nav>
+    <!-- Logo -->
+    <div class="logo">
+      <a href="#home">
+        <img src="./logo.svg" alt="logo" />
+      </a>
+    </div>
+    <!-- Nav items -->
+    <ul>
+      <li><a href="#tokenomics">Tokenomics</a></li>
+      <li><a href="#guide">Guide</a></li>
+    </ul>
+    <div class="menu">
+      <img src="/Menu.svg" alt="menu" onclick="openMobileMenu()" />
+    </div>
+  </nav>
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <div class="close-btn" onclick="closeMobileMenu()">
+      <img src="/x.svg" alt="close" />
+    </div>
+    <ul>
+      <li><a href="#tokenomics" onclick="closeMobileMenu()">Tokenomics</a></li>
+      <li><a href="#guide" onclick="closeMobileMenu()">Guide</a></li>
+    </ul>
+  </div>
+  <main id="home">
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="inner">
+        <img src="/hero-bear.png" alt="hero-bear" />
+        <div class="hero-text">
+          <h2>
+            Ditch the boring, grab the fun! <span>$YOGI</span> brings meme magic and chill vibes to your crypto
+            portfolio. Get ready for paw-some profits and good times. ✌️
+          </h2>
+          <a href="https://raydium.io/swap/?inputCurrency=sol&outputCurrency=4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R&fixed=in">
+          <button class="btn">Buy Now</button>
+          </a>
+          <div class="social-links">
+            <a href="https://x.com/yogilol_">
+              <img src="/twitter.svg" alt="twitter" />
+            </a>
+            <a href="https://t.me/YOGIL0L">
+              <img src="/telegram.svg" alt="telegram" />
+            </a>
+          </div>
+          <div class="social-links mobile">
+            <a href="https://x.com/yogilol_">
+              <img src="/twitter-mobile.svg" alt="twitter" />
+            </a>
+            <a href="https://t.me/YOGIL0L">
+              <img src="/telegram-mobile.svg" alt="telegram" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tokenomics -->
+    <section id="tokenomics" class="tokenomics">
+      <img src="/tokenleaf.svg" alt="tokenleaf" class="tokenleaf" loading="lazy" />
+      <img src="/tokenleaf1.svg" alt="tokenleaf1" class="tokenleaf1" loading="lazy" />
+      <img src="/tokenleafupper.svg" alt="tokenleafupper" class="tokenleafupper" loading="lazy" />
+
+      <div class="tokenomics-inner">
+        <div class="token-header">
+          <div class="hero-text">
+
+            <h2>Tokenomics</h2>
+          </div>
+          <p>Total supply: One trillion YOGI</p>
+        </div>
+        <div class="token-body">
+          <div class="text">
+            <h3>CONTRACT ADDRESS</h3>
+          </div>
+          <div class="text">
+            <h1 id="copyText">4vHBV9VVHbfi4DiziXeDWoqJbNZfenzZ4NkXQ2AVxXke</h1>
+            <i class="fas fa-copy" onclick="copyToClipboard()"></i>
+          </div>
+          <div class="text">
+            <h3>10%</h3>
+            <span>liquidity</span>
+          </div>
+          <div class="text">
+            <h3>50%</h3>
+            <span>Community (Airdrop)</span>
+          </div>
+          <div class="text">
+            <h3>25%</h3>
+            <span>Growth</span>
+          </div>
+          <div class="text">
+            <h3>15%</h3>
+            <span>Contributors</span>
+          </div>
+        </div>
+        <!-- <br>
+        <span class="token-footer">*Vested linearly over 3 years starting Jan 2024</span>
+      </div> -->
+      <img src="/token-bear.png" alt="tokenbear" class="tokenbear" loading="lazy" />
+      <img src="/tokenleafright.png" alt="tokenleafright" class="tokenleafright" loading="lazy" />
+    </section>
+
+    <!-- Guide -->
+    <section id="guide" class="guide">
+      <div class="vector"></div>
+      <img src="/arrow-desktop-1.svg" alt="arrow-destop-1" class="arrow-desktop-1" />
+      <img src="/guide-intro.png" alt="guide-intro" class="guide-intro" loading="eager" />
+      <img src="/guidebearstart.png" alt="guidebearstart" class="guidebearstart" loading="lazy" />
+      <img src="/guidebearright.png" alt="guidebearright" class="guidebearright" loading="lazy" />
+      <div class="layout">
+        <div class="header">How to buy</div>
+
+        <div class="body">
+          <img src="/arrow-desktop-3.svg" alt="arrow-destop-3" class="arrow-desktop-3" />
+          <div class="box">
+            <div class="head">
+              <div class="number">1</div>
+              <span>Create Wallet</span>
+            </div>
+            <p class="guide-text">
+              Download Phantom wallet or your wallet of choice from the App Store or Google Play store for free
+            </p>
+          </div>
+
+          <div class="box even">
+            <div class="head">
+              <div class="number">2</div>
+              <span>Get some $SOL</span>
+            </div>
+            <p class="guide-text">
+              If you don’t have any SOL, you can buy directly on Phantom
+              wallet, transfer from another wallet, or buy on another exchange
+              and send it to your wallet
+            </p>
+          </div>
+
+          <img src="/arrow-desktop-2.svg" alt="arrow-destop-2" class="arrow-desktop-2" />
+          <div class="box">
+            <div class="head">
+              <div class="number last">3</div>
+              <span>Trade<span>$SOL</span> for <span>$YOGI</span></span>
+            </div>
+            <p class="guide-text last">
+              Trade $SOL for $YOGI on <a href="https://raydium.io/swap/?inputCurrency=sol&outputCurrency=4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R&fixed=in">RAYDIUM.IO</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <img src="/guidebearleft.png" alt="guidebearleft" class="guidebearleft" loading="lazy" />
+    </section>
+  </main>
+  <footer>
+    <img src="/footer-bear.png" alt="footer-bear" class="footer-bear">
+    <div class="container">
+      <div class="social-links">
+        <a href="https://t.me/YOGIL0L">
+          <img src="/TG.svg" alt="facebook" />
+        </a>
+
+        <a href="https://x.com/yogilol_">
+          <img src="/Tw.svg" alt="twitter" />
+        </a>
+      </div>
+      <p class="copyright">© 2024 Yogi. All rights reserved.</p>
+
+      <div class="logo">
+        <a href="#home">
+          <img src="/logo.svg" alt="logo" />
+        </a>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
